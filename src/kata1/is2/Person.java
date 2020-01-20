@@ -1,20 +1,18 @@
 package kata1.is2;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Person {
+    
     private final String name;
-    private final Date nacimiento;
-    private static final int MS_PER_SECOND =1000;
-    private static final int SECONDS_PER_MINUTE =60;
-    private static final int MINUTES_PER_HOUR =60;
-    private static final int HOURS_PER_DAY =24;
-    private static final double DAYS_PER_YEAR =365.25;
-    private static final int MS_PER_YEAR =MS_PER_SECOND;
+    private final Calendar nacimiento;
+    private final long MILLISECONDS_PER_YEAR = (long) (1000*60*60*24*365.25);
     
     
     
-    public Person(String name, Date nacimiento) {
+    public Person(String name, Calendar nacimiento) {
         this.name = name;
         this.nacimiento = nacimiento;
     }
@@ -23,14 +21,17 @@ public class Person {
         return name;
     }
 
-    public Date getNaciomiento() {
+    public Calendar getNaciomiento() {
         return nacimiento;
     }
 
    public int getAge(){
-       return (int) (( new Date().getTime() - nacimiento.getTime() )/31536000000L);
-               
+       Calendar actual = GregorianCalendar.getInstance();
+       return (int) ( milliSecondsToYear(actual.getTimeInMillis()-nacimiento.getTimeInMillis()) );              
                
    } 
+   private long milliSecondsToYear(long milles){
+        return milles /MILLISECONDS_PER_YEAR;
+    }
     
 }
