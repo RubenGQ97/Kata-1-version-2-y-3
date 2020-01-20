@@ -6,8 +6,6 @@
 package kata1.is2;
 
 import java.time.LocalDate;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 /**
  *
