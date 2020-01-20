@@ -8,8 +8,6 @@ public class Person {
     private final String name;
     private final LocalDate nacimiento;
     
-    
-    
     public Person(String name, LocalDate nacimiento) {
         this.name = name;
         this.nacimiento = nacimiento;

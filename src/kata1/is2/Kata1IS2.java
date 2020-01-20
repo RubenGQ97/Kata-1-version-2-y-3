@@ -11,7 +11,7 @@ import java.util.GregorianCalendar;
 
 /**
  *
- * @author senyo
+ * @author Ruben Garcia Quintana
  */
 public class Kata1IS2 {
 
