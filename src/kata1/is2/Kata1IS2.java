@@ -5,6 +5,7 @@
  */
 package kata1.is2;
 
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -19,11 +20,11 @@ public class Kata1IS2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Calendar date;
-        date = GregorianCalendar.getInstance();
-        date.set(1997, 7, 30);  
+        
+        LocalDate date= LocalDate.of(1997,7,30);
+        
         Person p1 = new Person ("Ruben", date);
-        System.out.println(p1.getName() + " tiene " + p1.getAge() + " años");
+       System.out.println(p1.getName() + " tiene " + p1.getAge());
     }
     
 }
